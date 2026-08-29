@@ -1,6 +1,6 @@
-import { Product } from '@modules/products/domain/entities/product.entity';
-import { ProductRepository } from '@modules/products/domain/repositories/product.repository';
+import type { Product } from '@modules/products/domain/entities/product.entity';
 import { ProductNotFoundException } from '@modules/products/domain/exceptions/product-not-found.exception';
+import type { ProductRepository } from '@modules/products/domain/repositories/product.repository';
 
 export class GetProductUseCase {
   constructor(private readonly productRepo: ProductRepository) {}

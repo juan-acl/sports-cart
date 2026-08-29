@@ -1,6 +1,6 @@
+import { CreateBucketCommand, HeadBucketCommand, PutBucketPolicyCommand } from '@aws-sdk/client-s3';
 import { env } from '@/shared/infrastructure/config/env';
 import { s3Client } from '@/shared/infrastructure/s3/s3.client';
-import { CreateBucketCommand, HeadBucketCommand, PutBucketPolicyCommand } from '@aws-sdk/client-s3';
 
 async function bucketExists(name: string): Promise<boolean> {
   try {

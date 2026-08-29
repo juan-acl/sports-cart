@@ -1,8 +1,8 @@
 import { CartItem } from '@modules/carts/domain/entities/cart-item.entity';
-import { CartRepository } from '@modules/carts/domain/repositories/cart.repository';
-import { ProductRepository } from '@modules/products/domain/repositories/product.repository';
-import { ProductNotFoundException } from '@modules/products/domain/exceptions/product-not-found.exception';
+import type { CartRepository } from '@modules/carts/domain/repositories/cart.repository';
 import { InsufficientStockException } from '@modules/products/domain/exceptions/insufficient-stock.exception';
+import { ProductNotFoundException } from '@modules/products/domain/exceptions/product-not-found.exception';
+import type { ProductRepository } from '@modules/products/domain/repositories/product.repository';
 import { NotFoundException } from '@shared/domain/exceptions/domain.exception';
 
 export class UpdateCartItemUseCase {

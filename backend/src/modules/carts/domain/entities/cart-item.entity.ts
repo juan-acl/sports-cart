@@ -8,7 +8,7 @@ export interface CartItemProps {
 }
 
 export class CartItem {
-  constructor(private readonly props: CartItemProps) {
+  constructor(private props: CartItemProps) {
     if (props.quantity < 1) throw new Error('La cantidad debe ser al menos 1');
     if (props.unitPrice < 0) throw new Error('El precio no puede ser negativo');
   }

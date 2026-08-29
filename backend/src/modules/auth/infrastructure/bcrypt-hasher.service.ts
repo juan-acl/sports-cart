@@ -1,5 +1,5 @@
 import bcrypt from 'bcryptjs';
-import { PasswordHasherPort } from '../domain/ports/password-hasher.port';
+import type { PasswordHasherPort } from '../domain/ports/password-hasher.port';
 
 export class BcryptPasswordHasher implements PasswordHasherPort {
   private readonly rounds = 10;

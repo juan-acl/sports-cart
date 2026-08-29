@@ -1,9 +1,9 @@
-import { Request, Response } from 'express';
-import {
-  ApiSuccessResponse,
-  ApiPaginatedResponse,
+import type {
   ApiErrorResponse,
+  ApiPaginatedResponse,
+  ApiSuccessResponse,
 } from '@shared/application/dtos/api-response';
+import type { Request, Response } from 'express';
 
 function getRequestId(req: Request): string {
   return (

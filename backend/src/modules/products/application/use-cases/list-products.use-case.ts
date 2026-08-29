@@ -1,6 +1,6 @@
-import { Product } from '@modules/products/domain/entities/product.entity';
-import { ProductRepository } from '@modules/products/domain/repositories/product.repository';
-import { ListProductsQuery } from '../dtos/list-products.dto';
+import type { Product } from '@modules/products/domain/entities/product.entity';
+import type { ProductRepository } from '@modules/products/domain/repositories/product.repository';
+import type { ListProductsQuery } from '../dtos/list-products.dto';
 
 export interface ListProductsResult {
   products: ReturnType<Product['toJSON']>[];

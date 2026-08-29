@@ -1,3 +1,4 @@
+import { cartApi } from '@/features/cart/api/cartApi';
 import { createApi } from '@reduxjs/toolkit/query/react';
 import { baseQueryWithAuth } from '@shared/api/baseQuery';
 import type { ApiSuccessResponse } from '@shared/types/api';
@@ -29,6 +30,14 @@ export const authApi = createApi({
         method: 'POST',
         body: credentials,
       }),
+      async onQueryStarted(_, { dispatch, queryFulfilled }) {
+        try {
+          await queryFulfilled;
+          dispatch(cartApi.util.invalidateTags(['Cart']));
+        } catch {
+          console.error('Login failed, cart cache not invalidated');
+        }
+      },
       transformResponse: (response: ApiSuccessResponse<AuthResponse>) => response.data,
     }),
 

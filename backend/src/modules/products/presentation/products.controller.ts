@@ -1,8 +1,8 @@
-import { Request, Response, NextFunction } from 'express';
-import { ListProductsUseCase } from '@modules/products/application/use-cases/list-products.use-case';
-import { GetProductUseCase } from '@modules/products/application/use-cases/get-product.use-case';
-import { ListProductsQuery } from '@modules/products/application/dtos/list-products.dto';
+import type { ListProductsQuery } from '@modules/products/application/dtos/list-products.dto';
+import type { GetProductUseCase } from '@modules/products/application/use-cases/get-product.use-case';
+import type { ListProductsUseCase } from '@modules/products/application/use-cases/list-products.use-case';
 import { ApiResponder } from '@shared/infrastructure/http/response.builder';
+import type { NextFunction, Request, Response } from 'express';
 import { logger } from '@/shared/infrastructure/logging/winston.logger';
 
 export class ProductsController {

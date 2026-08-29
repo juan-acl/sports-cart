@@ -1,6 +1,6 @@
-import { Order } from '../entities/order.entity';
-import { CartItem } from '@modules/carts/domain/entities/cart-item.entity';
-import { PaginatedResult, PaginationParams } from '@shared/domain/value-objects/pagination.vo';
+import type { CartItem } from '@modules/carts/domain/entities/cart-item.entity';
+import type { PaginatedResult, PaginationParams } from '@shared/domain/value-objects/pagination.vo';
+import type { Order } from '../entities/order.entity';
 
 export interface CheckoutTransaction {
   order: Order;

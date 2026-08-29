@@ -1,5 +1,5 @@
-import { Product } from '../entities/product.entity';
-import { PaginatedResult, PaginationParams } from '@shared/domain/value-objects/pagination.vo';
+import type { PaginatedResult, PaginationParams } from '@shared/domain/value-objects/pagination.vo';
+import type { Product } from '../entities/product.entity';
 
 export interface ListProductsParams extends PaginationParams {
   category?: string;

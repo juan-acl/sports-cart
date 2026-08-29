@@ -1,11 +1,11 @@
 import {
-  DynamoDBDocumentClient,
+  type DynamoDBDocumentClient,
   GetCommand,
   PutCommand,
   QueryCommand,
 } from '@aws-sdk/lib-dynamodb';
-import { User } from '@modules/users/domain/entities/user.entity';
-import { UserRepository } from '@modules/users/domain/repositories/user.repository';
+import type { User } from '@modules/users/domain/entities/user.entity';
+import type { UserRepository } from '@modules/users/domain/repositories/user.repository';
 import {
   KEY_PREFIXES,
   SK_VALUES,

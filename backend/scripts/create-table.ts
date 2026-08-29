@@ -1,6 +1,11 @@
+import {
+  CreateTableCommand,
+  DescribeTableCommand,
+  UpdateTimeToLiveCommand,
+  waitUntilTableExists,
+} from '@aws-sdk/client-dynamodb';
 import { env } from '@/shared/infrastructure/config/env';
 import { dynamoClient } from '@/shared/infrastructure/dynamodb/dynamodb.client';
-import { CreateTableCommand, DescribeTableCommand } from '@aws-sdk/client-dynamodb';
 
 async function tableExists(name: string): Promise<boolean> {
   try {
@@ -53,6 +58,18 @@ async function main() {
           Projection: { ProjectionType: 'ALL' },
         },
       ],
+    }),
+  );
+
+  await waitUntilTableExists({ client: dynamoClient, maxWaitTime: 60 }, { TableName: tableName });
+
+  await dynamoClient.send(
+    new UpdateTimeToLiveCommand({
+      TableName: tableName,
+      TimeToLiveSpecification: {
+        AttributeName: 'expiratesAt',
+        Enabled: true,
+      },
     }),
   );
 

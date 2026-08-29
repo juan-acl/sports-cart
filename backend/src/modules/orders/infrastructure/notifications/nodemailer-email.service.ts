@@ -1,5 +1,8 @@
-import nodemailer, { Transporter } from 'nodemailer';
-import { EmailSenderPort, OrderEmailContext } from '@modules/orders/domain/ports/email-sender.port';
+import type {
+  EmailSenderPort,
+  OrderEmailContext,
+} from '@modules/orders/domain/ports/email-sender.port';
+import nodemailer, { type Transporter } from 'nodemailer';
 
 export class NodemailerEmailService implements EmailSenderPort {
   private readonly transporter: Transporter;

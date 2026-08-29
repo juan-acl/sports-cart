@@ -1,13 +1,13 @@
-import { Router } from 'express';
-import { CartsController } from './carts.controller';
-import { validate } from '@shared/infrastructure/http/middlewares/validation.middleware';
 import { authMiddleware } from '@shared/infrastructure/http/middlewares/auth.middleware';
+import { validate } from '@shared/infrastructure/http/middlewares/validation.middleware';
+import { Router } from 'express';
 import { addToCartSchema } from '../application/dtos/add-to-cart.dto';
 import { removeFromCartSchema } from '../application/dtos/remove-from-cart.dto';
 import {
   updateCartItemBodySchema,
   updateCartItemParamsSchema,
 } from '../application/dtos/update-cart-item.dto';
+import type { CartsController } from './carts.controller';
 
 export function buildCartsRouter(controller: CartsController): Router {
   const router = Router();

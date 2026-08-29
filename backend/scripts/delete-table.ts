@@ -1,6 +1,6 @@
+import { DeleteTableCommand } from '@aws-sdk/client-dynamodb';
 import { env } from '@/shared/infrastructure/config/env';
 import { dynamoClient } from '@/shared/infrastructure/dynamodb/dynamodb.client';
-import { DeleteTableCommand } from '@aws-sdk/client-dynamodb';
 
 async function main() {
   const tableName = env.DYNAMODB_TABLE_NAME;

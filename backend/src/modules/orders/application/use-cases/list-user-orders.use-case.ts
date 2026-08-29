@@ -1,5 +1,5 @@
-import { OrderRepository } from '@modules/orders/domain/repositories/order.repository';
-import { ListOrdersQuery } from '../dtos/list-orders.dto';
+import type { OrderRepository } from '@modules/orders/domain/repositories/order.repository';
+import type { ListOrdersQuery } from '../dtos/list-orders.dto';
 
 export class ListUserOrdersUseCase {
   constructor(private readonly orderRepo: OrderRepository) {}

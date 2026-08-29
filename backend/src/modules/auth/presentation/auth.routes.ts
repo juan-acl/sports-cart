@@ -1,8 +1,8 @@
-import { Router } from 'express';
-import { AuthController } from './auth.controller';
 import { validate } from '@shared/infrastructure/http/middlewares/validation.middleware';
-import { registerSchema } from '../application/dtos/register.dto';
+import { Router } from 'express';
 import { loginSchema } from '../application/dtos/login.dto';
+import { registerSchema } from '../application/dtos/register.dto';
+import type { AuthController } from './auth.controller';
 
 export function buildAuthRouter(controller: AuthController): Router {
   const router = Router();

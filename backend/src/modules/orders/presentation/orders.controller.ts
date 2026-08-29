@@ -1,11 +1,11 @@
-import { Response, NextFunction } from 'express';
-import { CheckoutUseCase } from '@modules/orders/application/use-cases/checkout.use-case';
-import { ListUserOrdersUseCase } from '@modules/orders/application/use-cases/list-user-orders.use-case';
-import { GetOrderUseCase } from '@modules/orders/application/use-cases/get-order.use-case';
-import { CheckoutDto } from '@modules/orders/application/dtos/checkout.dto';
-import { ListOrdersQuery } from '@modules/orders/application/dtos/list-orders.dto';
+import type { CheckoutDto } from '@modules/orders/application/dtos/checkout.dto';
+import type { ListOrdersQuery } from '@modules/orders/application/dtos/list-orders.dto';
+import type { CheckoutUseCase } from '@modules/orders/application/use-cases/checkout.use-case';
+import type { GetOrderUseCase } from '@modules/orders/application/use-cases/get-order.use-case';
+import type { ListUserOrdersUseCase } from '@modules/orders/application/use-cases/list-user-orders.use-case';
+import type { AuthenticatedRequest } from '@shared/infrastructure/http/middlewares/auth.middleware';
 import { ApiResponder } from '@shared/infrastructure/http/response.builder';
-import { AuthenticatedRequest } from '@shared/infrastructure/http/middlewares/auth.middleware';
+import type { NextFunction, Response } from 'express';
 import { logger } from '@/shared/infrastructure/logging/winston.logger';
 
 export class OrdersController {

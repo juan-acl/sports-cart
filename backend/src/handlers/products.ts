@@ -1,7 +1,7 @@
-import serverless from 'serverless-http';
+import { buildProductsRouter } from '@modules/products/presentation/products.routes';
 import { buildContainer } from '@shared/infrastructure/di/container';
 import { createExpressApp } from '@shared/infrastructure/http/express-app.factory';
-import { buildProductsRouter } from '@modules/products/presentation/products.routes';
+import serverless from 'serverless-http';
 
 const container = buildContainer();
 const router = buildProductsRouter(container.resolve('productsController'));

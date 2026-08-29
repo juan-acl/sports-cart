@@ -1,9 +1,9 @@
-import express, { Application, Router, Request, Response } from 'express';
 import cors from 'cors';
+import express, { type Application, type Request, type Response, type Router } from 'express';
+import { logger } from '../logging/winston.logger';
 import { errorHandler } from './middlewares/error-handler';
 import { requestIdMiddleware } from './middlewares/request-id.middleware';
 import { ApiResponder } from './response.builder';
-import { logger } from '../logging/winston.logger';
 
 export interface ExpressAppOptions {
   router: Router;

@@ -1,38 +1,35 @@
-import { asValue, asFunction, AwilixContainer, createContainer, InjectionMode } from 'awilix';
-import { dynamoClient, TABLE_NAME } from '../dynamodb/dynamodb.client';
-import { logger } from '../logging/winston.logger';
-import { env } from '../config/env';
-
-// Users
-import { DynamoUserRepository } from '@modules/users/infrastructure/persistence/dynamo-user.repository';
-
+import { LoginUseCase } from '@modules/auth/application/use-cases/login.use-case';
+import { RegisterUseCase } from '@modules/auth/application/use-cases/register.use-case';
 // Auth
 import { BcryptPasswordHasher } from '@modules/auth/infrastructure/bcrypt-hasher.service';
 import { JwtTokenService } from '@modules/auth/infrastructure/jwt-token.service';
-import { RegisterUseCase } from '@modules/auth/application/use-cases/register.use-case';
-import { LoginUseCase } from '@modules/auth/application/use-cases/login.use-case';
 import { AuthController } from '@modules/auth/presentation/auth.controller';
-
+import { GetProductUseCase } from '@modules/products/application/use-cases/get-product.use-case';
+import { ListProductsUseCase } from '@modules/products/application/use-cases/list-products.use-case';
 // Products
 import { DynamoProductRepository } from '@modules/products/infrastructure/persistence/dynamo-product.repository';
-import { ListProductsUseCase } from '@modules/products/application/use-cases/list-products.use-case';
-import { GetProductUseCase } from '@modules/products/application/use-cases/get-product.use-case';
 import { ProductsController } from '@modules/products/presentation/products.controller';
-import { DynamoCartRepository } from '@/modules/carts/infrastructure/persistence/dynamo-cart.repository';
-import { GetCartUseCase } from '@/modules/carts/application/use-cases/get-cart.use-case';
+// Users
+import { DynamoUserRepository } from '@modules/users/infrastructure/persistence/dynamo-user.repository';
+import { type AwilixContainer, asFunction, asValue, createContainer, InjectionMode } from 'awilix';
 import { AddToCartUseCase } from '@/modules/carts/application/use-cases/add-to-cart.use-case';
+import { GetCartUseCase } from '@/modules/carts/application/use-cases/get-cart.use-case';
 import { RemoveFromCartUseCase } from '@/modules/carts/application/use-cases/remove-from-cart.use-case';
-import { CartsController } from '@/modules/carts/presentation/carts.controller';
 import { UpdateCartItemUseCase } from '@/modules/carts/application/use-cases/update-cart-item.use-case';
-import { LoggerPort } from '@/shared/application/ports/logger.port';
-import { EmailSenderPort } from '@/modules/orders/domain/ports/email-sender.port';
-import { DynamoOrderRepository } from '@/modules/orders/infrastructure/persistence/dynamo-order.repository';
+import { DynamoCartRepository } from '@/modules/carts/infrastructure/persistence/dynamo-cart.repository';
+import { CartsController } from '@/modules/carts/presentation/carts.controller';
 import { CheckoutUseCase } from '@/modules/orders/application/use-cases/checkout.use-case';
-import { ListUserOrdersUseCase } from '@/modules/orders/application/use-cases/list-user-orders.use-case';
 import { GetOrderUseCase } from '@/modules/orders/application/use-cases/get-order.use-case';
-import { OrdersController } from '@/modules/orders/presentation/orders.controller';
-import { WinstonLoggerAdapter } from '../logging/winston-logger.adapter';
+import { ListUserOrdersUseCase } from '@/modules/orders/application/use-cases/list-user-orders.use-case';
+import type { EmailSenderPort } from '@/modules/orders/domain/ports/email-sender.port';
 import { NodemailerEmailService } from '@/modules/orders/infrastructure/notifications/nodemailer-email.service';
+import { DynamoOrderRepository } from '@/modules/orders/infrastructure/persistence/dynamo-order.repository';
+import { OrdersController } from '@/modules/orders/presentation/orders.controller';
+import type { LoggerPort } from '@/shared/application/ports/logger.port';
+import { env } from '../config/env';
+import { dynamoClient, TABLE_NAME } from '../dynamodb/dynamodb.client';
+import { logger } from '../logging/winston.logger';
+import { WinstonLoggerAdapter } from '../logging/winston-logger.adapter';
 
 export interface AppContainer {
   // Compartido

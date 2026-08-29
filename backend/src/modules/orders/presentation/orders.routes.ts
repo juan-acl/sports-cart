@@ -1,10 +1,10 @@
-import { Router } from 'express';
-import { OrdersController } from './orders.controller';
-import { validate } from '@shared/infrastructure/http/middlewares/validation.middleware';
 import { authMiddleware } from '@shared/infrastructure/http/middlewares/auth.middleware';
+import { validate } from '@shared/infrastructure/http/middlewares/validation.middleware';
+import { Router } from 'express';
 import { checkoutSchema } from '../application/dtos/checkout.dto';
 import { listOrdersQuerySchema } from '../application/dtos/list-orders.dto';
 import { orderIdParamsSchema } from '../application/dtos/order-id.dto';
+import type { OrdersController } from './orders.controller';
 
 export function buildOrdersRouter(controller: OrdersController): Router {
   const router = Router();

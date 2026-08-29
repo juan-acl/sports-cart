@@ -1,8 +1,8 @@
-import { Router } from 'express';
-import { ProductsController } from './products.controller';
 import { validate } from '@shared/infrastructure/http/middlewares/validation.middleware';
+import { Router } from 'express';
 import { listProductsQuerySchema } from '../application/dtos/list-products.dto';
 import { productIdParamsSchema } from '../application/dtos/product-id.dto';
+import type { ProductsController } from './products.controller';
 
 export function buildProductsRouter(controller: ProductsController): Router {
   const router = Router();

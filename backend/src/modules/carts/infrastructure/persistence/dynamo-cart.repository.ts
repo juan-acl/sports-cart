@@ -1,13 +1,13 @@
 import {
+  BatchWriteCommand,
   DeleteCommand,
-  DynamoDBDocumentClient,
+  type DynamoDBDocumentClient,
   PutCommand,
   QueryCommand,
-  BatchWriteCommand,
 } from '@aws-sdk/lib-dynamodb';
 import { Cart } from '@modules/carts/domain/entities/cart.entity';
-import { CartItem } from '@modules/carts/domain/entities/cart-item.entity';
-import { CartRepository } from '@modules/carts/domain/repositories/cart.repository';
+import type { CartItem } from '@modules/carts/domain/entities/cart-item.entity';
+import type { CartRepository } from '@modules/carts/domain/repositories/cart.repository';
 import { KEY_PREFIXES } from '@shared/infrastructure/dynamodb/single-table.constants';
 import { CartMapper } from './cart.mapper';
 

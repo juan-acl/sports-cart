@@ -1,4 +1,4 @@
-import { LoggerPort } from '@shared/application/ports/logger.port';
+import type { LoggerPort } from '@shared/application/ports/logger.port';
 import { logger as winstonLogger } from './winston.logger';
 
 export class WinstonLoggerAdapter implements LoggerPort {

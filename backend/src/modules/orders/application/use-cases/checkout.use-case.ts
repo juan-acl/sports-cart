@@ -1,15 +1,15 @@
-import { v4 as uuid } from 'uuid';
+import type { CartRepository } from '@modules/carts/domain/repositories/cart.repository';
 import { Order } from '@modules/orders/domain/entities/order.entity';
 import { OrderItem } from '@modules/orders/domain/entities/order-item.entity';
-import { OrderRepository } from '@modules/orders/domain/repositories/order.repository';
-import { EmailSenderPort } from '@modules/orders/domain/ports/email-sender.port';
 import { EmptyCartException } from '@modules/orders/domain/exceptions/empty-cart.exception';
-import { CartRepository } from '@modules/carts/domain/repositories/cart.repository';
-import { ProductRepository } from '@modules/products/domain/repositories/product.repository';
-import { ProductNotFoundException } from '@modules/products/domain/exceptions/product-not-found.exception';
+import type { EmailSenderPort } from '@modules/orders/domain/ports/email-sender.port';
+import type { OrderRepository } from '@modules/orders/domain/repositories/order.repository';
 import { DEFAULT_SHIPPING_ADDRESS } from '@modules/orders/domain/value-objects/shipping-address.vo';
-import { LoggerPort } from '@shared/application/ports/logger.port';
-import { CheckoutDto } from '../dtos/checkout.dto';
+import { ProductNotFoundException } from '@modules/products/domain/exceptions/product-not-found.exception';
+import type { ProductRepository } from '@modules/products/domain/repositories/product.repository';
+import type { LoggerPort } from '@shared/application/ports/logger.port';
+import { v4 as uuid } from 'uuid';
+import type { CheckoutDto } from '../dtos/checkout.dto';
 
 export interface CheckoutInput {
   userId: string;

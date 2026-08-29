@@ -1,4 +1,4 @@
-import { CartItem, CartItemProps } from '@modules/carts/domain/entities/cart-item.entity';
+import { CartItem, type CartItemProps } from '@modules/carts/domain/entities/cart-item.entity';
 import { KEY_PREFIXES } from '@shared/infrastructure/dynamodb/single-table.constants';
 
 export class CartMapper {

@@ -1,4 +1,4 @@
-import { User, UserProps } from '@modules/users/domain/entities/user.entity';
+import { User, type UserProps } from '@modules/users/domain/entities/user.entity';
 import { KEY_PREFIXES, SK_VALUES } from '@shared/infrastructure/dynamodb/single-table.constants';
 
 export interface UserItem {

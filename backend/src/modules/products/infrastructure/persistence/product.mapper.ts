@@ -1,4 +1,4 @@
-import { Product, ProductProps } from '@modules/products/domain/entities/product.entity';
+import { Product, type ProductProps } from '@modules/products/domain/entities/product.entity';
 
 export class ProductMapper {
   static toDomain(item: Record<string, unknown>): Product {

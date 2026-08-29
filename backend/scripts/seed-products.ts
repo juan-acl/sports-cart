@@ -1,13 +1,13 @@
-import { BatchWriteCommand } from '@aws-sdk/lib-dynamodb';
 import { PutObjectCommand } from '@aws-sdk/client-s3';
+import { BatchWriteCommand } from '@aws-sdk/lib-dynamodb';
 import { v4 as uuid } from 'uuid';
+import { env } from '../src/shared/infrastructure/config/env';
 import { dynamoClient, TABLE_NAME } from '../src/shared/infrastructure/dynamodb/dynamodb.client';
-import { s3Client, BUCKET_NAME } from '../src/shared/infrastructure/s3/s3.client';
 import {
   KEY_PREFIXES,
   SK_VALUES,
 } from '../src/shared/infrastructure/dynamodb/single-table.constants';
-import { env } from '../src/shared/infrastructure/config/env';
+import { BUCKET_NAME, s3Client } from '../src/shared/infrastructure/s3/s3.client';
 
 interface SeedProduct {
   name: string;

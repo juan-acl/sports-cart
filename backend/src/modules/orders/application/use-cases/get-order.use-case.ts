@@ -1,5 +1,5 @@
-import { OrderRepository } from '@modules/orders/domain/repositories/order.repository';
 import { OrderNotFoundException } from '@modules/orders/domain/exceptions/order-not-found.exception';
+import type { OrderRepository } from '@modules/orders/domain/repositories/order.repository';
 
 export class GetOrderUseCase {
   constructor(private readonly orderRepo: OrderRepository) {}

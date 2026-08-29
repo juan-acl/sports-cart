@@ -1,15 +1,19 @@
-import { DynamoDBDocumentClient, QueryCommand, TransactWriteCommand } from '@aws-sdk/lib-dynamodb';
 import { TransactionCanceledException } from '@aws-sdk/client-dynamodb';
-import { Order } from '@modules/orders/domain/entities/order.entity';
 import {
+  type DynamoDBDocumentClient,
+  QueryCommand,
+  TransactWriteCommand,
+} from '@aws-sdk/lib-dynamodb';
+import type { Order } from '@modules/orders/domain/entities/order.entity';
+import type {
   CheckoutTransaction,
   OrderRepository,
 } from '@modules/orders/domain/repositories/order.repository';
 import { InsufficientStockException } from '@modules/products/domain/exceptions/insufficient-stock.exception';
-import { PaginatedResult, PaginationParams } from '@shared/domain/value-objects/pagination.vo';
+import type { PaginatedResult, PaginationParams } from '@shared/domain/value-objects/pagination.vo';
 import { KEY_PREFIXES, SK_VALUES } from '@shared/infrastructure/dynamodb/single-table.constants';
-import { OrderMapper } from './order.mapper';
 import { logger } from '@/shared/infrastructure/logging/winston.logger';
+import { OrderMapper } from './order.mapper';
 
 export class DynamoOrderRepository implements OrderRepository {
   constructor(

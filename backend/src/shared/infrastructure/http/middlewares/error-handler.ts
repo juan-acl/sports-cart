@@ -1,7 +1,7 @@
-import { NextFunction, Request, Response } from 'express';
-import { ZodError } from 'zod';
 import { DomainException } from '@shared/domain/exceptions/domain.exception';
 import { logger } from '@shared/infrastructure/logging/winston.logger';
+import type { NextFunction, Request, Response } from 'express';
+import { ZodError } from 'zod';
 import { ApiResponder } from '../response.builder';
 
 export function errorHandler(err: Error, req: Request, res: Response, _next: NextFunction): void {

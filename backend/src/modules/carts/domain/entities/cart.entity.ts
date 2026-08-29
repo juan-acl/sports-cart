@@ -1,4 +1,4 @@
-import { CartItem } from './cart-item.entity';
+import type { CartItem } from './cart-item.entity';
 
 export class Cart {
   constructor(

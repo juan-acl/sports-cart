@@ -1,0 +1,19 @@
+[package]
+
+
+name = "backend-v2"
+version = "0.1.0"
+edition = "2021"
+
+resolver="2"
+
+[dependencies]
+
+[workspace]
+members = [
+  "crates/domain",
+  "crates/infrastructure",
+  # "crates/application",
+  # "crates/presentation",
+  # "crates/shared"
+]

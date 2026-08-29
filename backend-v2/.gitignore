@@ -1,0 +1,48 @@
+# Compilación
+/target/
+**/*.rs.bk
+*.pdb
+
+# Cargo.lock: NO ignorar en binarios (tus functions/ lo son).
+# Ignóralo solo si el workspace publica librerías.
+
+# cargo-lambda
+/.cargo-lambda/
+
+# Serverless Framework
+.serverless/
+.serverless_plugins/
+
+# Variables de entorno
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Credenciales
+*.pem
+*.key
+.aws/
+
+# DynamoDB Local (datos persistidos)
+/docker/dynamodb/
+shared-local-instance.db
+/data/
+
+# Cobertura
+/coverage/
+*.profraw
+*.profdata
+tarpaulin-report.html
+lcov.info
+
+# Editores
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+*.swp
+*.swo
+
+# macOS
+.DS_Store

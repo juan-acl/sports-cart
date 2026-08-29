@@ -1,7 +1,7 @@
-import { NextFunction, Request, Response } from 'express';
-import jwt from 'jsonwebtoken';
-import { env } from '@shared/infrastructure/config/env';
 import { UnauthorizedException } from '@shared/domain/exceptions/domain.exception';
+import { env } from '@shared/infrastructure/config/env';
+import type { NextFunction, Request, Response } from 'express';
+import jwt from 'jsonwebtoken';
 
 export interface AuthenticatedRequest extends Request {
   user?: {

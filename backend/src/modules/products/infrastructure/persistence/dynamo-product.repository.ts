@@ -1,10 +1,10 @@
-import { DynamoDBDocumentClient, GetCommand, QueryCommand } from '@aws-sdk/lib-dynamodb';
-import { Product } from '@modules/products/domain/entities/product.entity';
-import {
+import { type DynamoDBDocumentClient, GetCommand, QueryCommand } from '@aws-sdk/lib-dynamodb';
+import type { Product } from '@modules/products/domain/entities/product.entity';
+import type {
   ListProductsParams,
   ProductRepository,
 } from '@modules/products/domain/repositories/product.repository';
-import { PaginatedResult } from '@shared/domain/value-objects/pagination.vo';
+import type { PaginatedResult } from '@shared/domain/value-objects/pagination.vo';
 import {
   KEY_PREFIXES,
   SK_VALUES,

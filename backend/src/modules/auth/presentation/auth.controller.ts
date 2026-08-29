@@ -1,9 +1,9 @@
-import { Request, Response, NextFunction } from 'express';
-import { RegisterUseCase } from '@modules/auth/application/use-cases/register.use-case';
-import { LoginUseCase } from '@modules/auth/application/use-cases/login.use-case';
-import { RegisterDto } from '@modules/auth/application/dtos/register.dto';
-import { LoginDto } from '@modules/auth/application/dtos/login.dto';
+import type { LoginDto } from '@modules/auth/application/dtos/login.dto';
+import type { RegisterDto } from '@modules/auth/application/dtos/register.dto';
+import type { LoginUseCase } from '@modules/auth/application/use-cases/login.use-case';
+import type { RegisterUseCase } from '@modules/auth/application/use-cases/register.use-case';
 import { ApiResponder } from '@shared/infrastructure/http/response.builder';
+import type { NextFunction, Request, Response } from 'express';
 
 export class AuthController {
   constructor(

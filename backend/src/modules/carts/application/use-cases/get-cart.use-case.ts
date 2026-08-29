@@ -1,4 +1,4 @@
-import { CartRepository } from '@modules/carts/domain/repositories/cart.repository';
+import type { CartRepository } from '@modules/carts/domain/repositories/cart.repository';
 
 export class GetCartUseCase {
   constructor(private readonly cartRepo: CartRepository) {}

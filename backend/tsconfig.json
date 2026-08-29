@@ -22,13 +22,13 @@
     "noFallthroughCasesInSwitch": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "baseUrl": "./",
+    "types": ["jest", "node"],
     "paths": {
-      "@/*": ["src/*"],
-      "@modules/*": ["src/modules/*"],
-      "@shared/*": ["src/shared/*"]
+      "@/*": ["./src/*"],
+      "@modules/*": ["./src/modules/*"],
+      "@shared/*": ["./src/shared/*"]
     }
   },
-  "include": ["src/**/*", "scripts/**/*", "tests/**/*", "scripts"],
+  "include": ["src/**/*", "scripts/**/*", "__tests__/**/*", "scripts"],
   "exclude": ["node_modules", "dist", ".serverless"]
 }

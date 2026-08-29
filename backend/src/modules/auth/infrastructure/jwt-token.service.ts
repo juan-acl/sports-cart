@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import { TokenPayload, TokenServicePort } from '../domain/ports/token-service.port';
+import type { TokenPayload, TokenServicePort } from '../domain/ports/token-service.port';
 
 export class JwtTokenService implements TokenServicePort {
   constructor(

@@ -1,7 +1,7 @@
-import { Order, OrderProps } from '@modules/orders/domain/entities/order.entity';
+import { Order, type OrderProps } from '@modules/orders/domain/entities/order.entity';
 import { OrderItem } from '@modules/orders/domain/entities/order-item.entity';
-import { OrderStatus } from '@modules/orders/domain/value-objects/order-status.vo';
-import { ShippingAddress } from '@modules/orders/domain/value-objects/shipping-address.vo';
+import type { OrderStatus } from '@modules/orders/domain/value-objects/order-status.vo';
+import type { ShippingAddress } from '@modules/orders/domain/value-objects/shipping-address.vo';
 import { KEY_PREFIXES } from '@shared/infrastructure/dynamodb/single-table.constants';
 
 export class OrderMapper {

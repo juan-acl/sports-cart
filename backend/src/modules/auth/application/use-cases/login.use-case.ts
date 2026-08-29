@@ -1,9 +1,9 @@
-import { User } from '@modules/users/domain/entities/user.entity';
-import { UserRepository } from '@modules/users/domain/repositories/user.repository';
+import type { PasswordHasherPort } from '@modules/auth/domain/ports/password-hasher.port';
+import type { TokenServicePort } from '@modules/auth/domain/ports/token-service.port';
+import type { User } from '@modules/users/domain/entities/user.entity';
+import type { UserRepository } from '@modules/users/domain/repositories/user.repository';
 import { UnauthorizedException } from '@shared/domain/exceptions/domain.exception';
-import { PasswordHasherPort } from '@modules/auth/domain/ports/password-hasher.port';
-import { TokenServicePort } from '@modules/auth/domain/ports/token-service.port';
-import { LoginDto } from '../dtos/login.dto';
+import type { LoginDto } from '../dtos/login.dto';
 
 export interface LoginResult {
   user: ReturnType<User['toJSON']>;

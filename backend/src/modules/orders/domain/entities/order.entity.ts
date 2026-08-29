@@ -1,6 +1,6 @@
-import { OrderItem } from './order-item.entity';
-import { OrderStatus, ORDER_STATUS } from '../value-objects/order-status.vo';
-import { ShippingAddress } from '../value-objects/shipping-address.vo';
+import { ORDER_STATUS, type OrderStatus } from '../value-objects/order-status.vo';
+import type { ShippingAddress } from '../value-objects/shipping-address.vo';
+import type { OrderItem } from './order-item.entity';
 
 export interface OrderProps {
   id: string;

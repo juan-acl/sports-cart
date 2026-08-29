@@ -1,12 +1,12 @@
-import { Response, NextFunction } from 'express';
-import { GetCartUseCase } from '@modules/carts/application/use-cases/get-cart.use-case';
-import { AddToCartUseCase } from '@modules/carts/application/use-cases/add-to-cart.use-case';
-import { RemoveFromCartUseCase } from '@modules/carts/application/use-cases/remove-from-cart.use-case';
-import { UpdateCartItemUseCase } from '@modules/carts/application/use-cases/update-cart-item.use-case';
-import { AddToCartDto } from '@modules/carts/application/dtos/add-to-cart.dto';
-import { UpdateCartItemBodyDto } from '@modules/carts/application/dtos/update-cart-item.dto';
+import type { AddToCartDto } from '@modules/carts/application/dtos/add-to-cart.dto';
+import type { UpdateCartItemBodyDto } from '@modules/carts/application/dtos/update-cart-item.dto';
+import type { AddToCartUseCase } from '@modules/carts/application/use-cases/add-to-cart.use-case';
+import type { GetCartUseCase } from '@modules/carts/application/use-cases/get-cart.use-case';
+import type { RemoveFromCartUseCase } from '@modules/carts/application/use-cases/remove-from-cart.use-case';
+import type { UpdateCartItemUseCase } from '@modules/carts/application/use-cases/update-cart-item.use-case';
+import type { AuthenticatedRequest } from '@shared/infrastructure/http/middlewares/auth.middleware';
 import { ApiResponder } from '@shared/infrastructure/http/response.builder';
-import { AuthenticatedRequest } from '@shared/infrastructure/http/middlewares/auth.middleware';
+import type { NextFunction, Response } from 'express';
 
 export class CartsController {
   constructor(

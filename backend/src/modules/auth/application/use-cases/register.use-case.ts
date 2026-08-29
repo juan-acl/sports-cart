@@ -1,10 +1,10 @@
-import { v4 as uuid } from 'uuid';
+import type { PasswordHasherPort } from '@modules/auth/domain/ports/password-hasher.port';
+import type { TokenServicePort } from '@modules/auth/domain/ports/token-service.port';
 import { User } from '@modules/users/domain/entities/user.entity';
-import { UserRepository } from '@modules/users/domain/repositories/user.repository';
+import type { UserRepository } from '@modules/users/domain/repositories/user.repository';
 import { ConflictException } from '@shared/domain/exceptions/domain.exception';
-import { PasswordHasherPort } from '@modules/auth/domain/ports/password-hasher.port';
-import { TokenServicePort } from '@modules/auth/domain/ports/token-service.port';
-import { RegisterDto } from '../dtos/register.dto';
+import { v4 as uuid } from 'uuid';
+import type { RegisterDto } from '../dtos/register.dto';
 
 export interface RegisterResult {
   user: ReturnType<User['toJSON']>;

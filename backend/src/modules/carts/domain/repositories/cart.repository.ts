@@ -1,5 +1,5 @@
-import { Cart } from '../entities/cart.entity';
-import { CartItem } from '../entities/cart-item.entity';
+import type { Cart } from '../entities/cart.entity';
+import type { CartItem } from '../entities/cart-item.entity';
 
 export interface CartRepository {
   getByUserId(userId: string): Promise<Cart>;
