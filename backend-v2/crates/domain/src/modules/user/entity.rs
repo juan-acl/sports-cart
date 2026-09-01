@@ -1,10 +1,10 @@
 #[derive(Debug, Clone)]
 pub struct User {
-    id: String,
-    email: String,
-    name: String,
-    password_hash: String,
-    create_at: String,
+    pub id: String,
+    pub email: String,
+    pub name: String,
+    pub password_hash: String,
+    pub create_at: String,
 }
 
 impl User {
