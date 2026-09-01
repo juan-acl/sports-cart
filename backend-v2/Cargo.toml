@@ -8,13 +8,12 @@ edition = "2021"
 resolver="2"
 
 [dependencies]
-async-trait = "0.1.92"
 
 [workspace]
 members = [
   "crates/domain",
   "crates/infrastructure",
-  # "crates/application",
+  "crates/application",
   # "crates/presentation",
   # "crates/shared"
 ]

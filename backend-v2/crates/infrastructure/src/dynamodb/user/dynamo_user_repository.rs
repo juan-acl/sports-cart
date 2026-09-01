@@ -27,7 +27,10 @@ impl UserRepository for DynamoUserRepository {
             .table_name(&self.table_name)
             .index_name("GSI1")
             .key_condition_expression("GSI1PK = :pk")
-            .expression_attribute_values(":pk", AttributeValue::S(email.to_string().to_lowercase()))
+            .expression_attribute_values(
+                ":pk",
+                AttributeValue::S(email.to_string().trim().to_lowercase()),
+            )
             .limit(1)
             .send()
             .await
