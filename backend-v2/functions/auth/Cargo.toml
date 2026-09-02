@@ -1,0 +1,20 @@
+[package]
+name = "auth-lambda"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "bootstrap"
+path = "src/main.rs"
+
+[dependencies]
+domain = { path = "../../crates/domain" }
+application = { path = "../../crates/application" }
+infrastructure = { path = "../../crates/infrastructure" }
+presentation = { path = "../../crates/presentation" }
+
+tokio = { workspace = true }
+lambda_http = { workspace = true }
+axum = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }

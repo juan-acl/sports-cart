@@ -27,4 +27,11 @@ impl UserKey {
             None => String::from(GSI2),
         }
     }
+
+    pub fn gsi1sk(index: Option<&str>) -> String {
+        match index {
+            Some(n) => format!("{}{}", GSI2, n),
+            None => String::from("USER".to_string()),
+        }
+    }
 }

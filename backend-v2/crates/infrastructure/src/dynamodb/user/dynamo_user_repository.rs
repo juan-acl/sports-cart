@@ -26,11 +26,12 @@ impl UserRepository for DynamoUserRepository {
             .query()
             .table_name(&self.table_name)
             .index_name("GSI1")
-            .key_condition_expression("GSI1PK = :pk")
+            .key_condition_expression("GSI1PK = :pk and GSI1SK = :sk")
             .expression_attribute_values(
                 ":pk",
-                AttributeValue::S(email.to_string().trim().to_lowercase()),
+                AttributeValue::S(format!("EMAIL#{}", email.to_string().trim().to_lowercase())),
             )
+            .expression_attribute_values(":sk", AttributeValue::S("USER".to_string()))
             .limit(1)
             .send()
             .await
@@ -48,7 +49,7 @@ impl UserRepository for DynamoUserRepository {
             .put_item()
             .table_name(&self.table_name)
             .set_item(Some(UserMapper::to_item(user)))
-            .condition_expression("attibute_not_exists(PK)")
+            .condition_expression("attribute_not_exists(PK)")
             .send()
             .await
             .map_err(|err| match err.into_service_error() {

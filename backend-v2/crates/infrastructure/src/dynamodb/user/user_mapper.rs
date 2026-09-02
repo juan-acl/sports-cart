@@ -21,8 +21,9 @@ impl UserMapper {
                     user.email().to_lowercase().trim()
                 )),
             ),
-            ("GSI2SK".into(), AttributeValue::S(UserKey::sk(None))),
+            ("GSI1SK".into(), AttributeValue::S(UserKey::gsi1sk(None))),
             ("id".into(), AttributeValue::S(user.id().to_string())),
+            ("name".into(), AttributeValue::S(user.name().to_string())),
             ("email".into(), AttributeValue::S(user.email().to_string())),
             (
                 "passwordHash".into(),

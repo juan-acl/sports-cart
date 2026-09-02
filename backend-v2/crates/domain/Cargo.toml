@@ -8,3 +8,5 @@ async-trait = "0.1.92"
 thiserror = "2.0.20"
 uuid = { version= "1", features = ["v4" ]}
 chrono = { version = "0.4", features = ["serde"] }
+serde = { workspace = true }
+jsonwebtoken = { workspace = true }

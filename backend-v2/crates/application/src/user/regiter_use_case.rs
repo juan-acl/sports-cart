@@ -19,7 +19,7 @@ impl RegisterUseCase {
         }
     }
 
-    pub async fn axecute(&self, input: RegisterInput) -> Result<RegisterOutput, RegisterError> {
+    pub async fn execute(&self, input: RegisterInput) -> Result<RegisterOutput, RegisterError> {
         if self.user_repo.find_by_email(&input.email).await?.is_some() {
             return Err(RegisterError::EmailAlreadyExist);
         }

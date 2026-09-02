@@ -3,7 +3,7 @@ pub trait PasswordHasher: Send + Sync {
     fn verify(&self, plain: &str, hash: &str) -> Result<bool, HashError>;
 }
 
-pub trait TokenService {
+pub trait TokenService: Send + Sync {
     fn sign(&self, user_id: &str, email: &str) -> Result<String, TokenError>;
 }
 
